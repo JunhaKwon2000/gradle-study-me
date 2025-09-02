@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,43 +41,9 @@ public class NoticeController {
 		return noticeService.list(pageable);
 	}
 	
-//	// list
-//	// @ResponseBody
-//	@GetMapping("/notice/list/{pageNum}/{kind}/{search}")
-//	public String doIt() {
-//		
-//		
-//		return "list";
-//	}
-//	
-//	
-//	// detail
-//	// @ResponseBody
-//	// name은 파라미터 이름이 다를 경우
-//	// value는 기본값
-//	@GetMapping("/notice/detail/{boardNum}")
-//	public String doIt(@PathVariable("num") long num, @PathVariable("kind") String kind) {
-//		System.out.println(num);
-//		System.out.println(kind);
-//		return "detail";
-//	}
-//	
-//	// Post는 데이터 받을 때 DTO로 받으셈
-//	
-//	@PostMapping("/notice")
-//	public String doIt(NoticeVO noticeVO) {
-//		
-//	}
-//	
-//	@PutMapping("/notice")
-//	public void doItUpdate(NoticeVO noticeVO) {
-//		
-//	}
-//	
-//	@DeleteMapping("/notice")
-//	public void doIt(NoticeVO noticeVO) {
-//		
-//	}
-	
+	@PostMapping("write")
+	public NoticeVO write(@RequestBody NoticeVO noticeVO) {
+		return noticeService.write(noticeVO);
+	} 
 	
 }
