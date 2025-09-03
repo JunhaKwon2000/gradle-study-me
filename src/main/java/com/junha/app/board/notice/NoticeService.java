@@ -27,7 +27,6 @@ public class NoticeService {
 
 	public NoticeVO write(NoticeVO noticeVO) {
 		noticeVO.setBoardDate(LocalDateTime.now());
-		noticeVO.setBoardHit(0L);
 		NoticeVO result = noticeRepository.save(noticeVO);
 		return result;
 	}

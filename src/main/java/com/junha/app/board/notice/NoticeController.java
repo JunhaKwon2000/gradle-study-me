@@ -42,8 +42,14 @@ public class NoticeController {
 	}
 	
 	@PostMapping("write")
-	public NoticeVO write(@RequestBody NoticeVO noticeVO) {
-		return noticeService.write(noticeVO);
+	public boolean write(@RequestBody NoticeVO noticeVO) {
+        NoticeVO result = noticeService.write(noticeVO);
+        if (result != null) {
+            return true;
+        } else {
+            return false;
+        }
+		// return noticeService.write(noticeVO);
 	} 
 	
 }
