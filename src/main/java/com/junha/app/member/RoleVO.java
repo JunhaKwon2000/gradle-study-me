@@ -21,6 +21,6 @@ public class RoleVO {
 	private Long roleNum;
 	private String roleName;
 	
-	@OneToMany(mappedBy = "roleVO", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "roleVO", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	List<MemberRoleVO> memberRoleVOs;
 }

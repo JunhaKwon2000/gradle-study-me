@@ -22,13 +22,13 @@ public class MemberRoleVO {
 	
 //	private String username; // 애는 해제해줘야함 IdClass 쓸 때는 + @ID
 	@Id
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "username", insertable = false, updatable = false) // EmbeddedId 쓸 때는 insertable,updatable false로
 	private MemberVO memberVO;
 	
 //	private Long roleNum; // 애는 해제해줘야함 IdClass 쓸 때는 + @ID
 	@Id
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "roleNum", insertable = false, updatable = false) // EmbeddedId 쓸 때는 insertable,updatable false로 
 	private RoleVO roleVO;
 }

@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin
 @RestController // 모든 메서드에 ResponseBody 적용
-@RequestMapping("/notice/**")
+@RequestMapping("/api/notice/**")
 public class NoticeController {
 
 	@Autowired
@@ -41,8 +41,9 @@ public class NoticeController {
 		return noticeService.list(pageable);
 	}
 	
+    // 이거 만약 json으로 보내면 @requestBody 붙여야댐
 	@PostMapping("write")
-	public boolean write(@RequestBody NoticeVO noticeVO) {
+	public boolean write(NoticeVO noticeVO) {
         NoticeVO result = noticeService.write(noticeVO);
         if (result != null) {
             return true;
